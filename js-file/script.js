@@ -35,12 +35,27 @@ callBtn.forEach(function(btn){
        cointCount = cointCount - 20;
          document.getElementById('coin-count').innerText = cointCount;
         if(cointCount < 20){
-            alert("You don't have enough balance. Please recharge your account.");
-            document.getElementById('coin-count').innerText = 0;
+            alert("You don't have enough coin. Minimum 20 coins required to make a call.");
+            
         }
+        const callHistory = document.getElementById('call-history');
+        const callEntry = document.createElement('p');
+        callEntry.classList.add('bg-white', 'p-4', 'rounded-lg', 'shadow-md', 'my-2', 'text-[#5c5c5cfa]', 'flex', 'justify-between', 'items-center');
+        let currentTime = new Date().toLocaleTimeString();
+        callEntry.innerHTML = `
+        <span>${titleName}<br>${number}</span>
+        <span> ${currentTime}</span>`;
         
+        callHistory.prepend(callEntry);
 
     });
+});
+
+const clearBtn = document.getElementById('clear-btn');
+
+clearBtn.addEventListener('click', function(){
+    const callHistory = document.getElementById('call-history');
+    callHistory.innerHTML = '';
 });
 
 
