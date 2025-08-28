@@ -40,6 +40,6 @@ body {
 @media (max-width: 768px) {
     .contact-container {
         flex-direction: column;
-        padding-left: 15px;
+        
     }
 }
