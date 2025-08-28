@@ -1,0 +1,45 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai&display=swap');
+
+body {
+    font-family: 'Hind Madurai', sans-serif;
+}
+
+.left{
+    flex: 0 0 70%;
+    padding-right: 15px;
+}
+
+.right{
+    flex: 0 0 30%;
+    padding-left: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .header-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .header-count-section{
+        padding-top: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        padding-left: 15px;
+    }
+}
