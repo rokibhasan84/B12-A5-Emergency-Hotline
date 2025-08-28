@@ -24,3 +24,14 @@ copyBtn.forEach(function(copy){
 copyIncrase.innerText = countCopy;
     });
 });
+
+
+// Copy number and paste anywhere
+const number = document.querySelectorAll(".number");
+
+number.forEach(function(num){
+    num.addEventListener('click', function(){
+        const phoneNumber = num.textContent.trim();
+        navigator.clipboard.writeText(phoneNumber);
+    });
+});
