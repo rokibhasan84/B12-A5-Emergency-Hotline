@@ -12,6 +12,38 @@ heartCount.innerText = count;
 });
 
 
+// Call buttons function
+
+const callBtn = document.querySelectorAll('.btn-call');
+// const clearBtn = document.getElementById('clear-btn');
+
+
+
+
+callBtn.forEach(function(btn){
+    btn.addEventListener('click', function(){
+
+    const parentDiv = btn.closest('.closest-content');
+
+    const titleName = parentDiv.querySelector('.title').textContent;
+    const number = parentDiv.querySelector('.number').textContent;
+
+    alert(`📞 Calling:  ${titleName} - ${number}`);
+    
+    let cointCount = document.getElementById('coin-count').innerText;
+
+       cointCount = cointCount - 20;
+         document.getElementById('coin-count').innerText = cointCount;
+        if(cointCount < 20){
+            alert("You don't have enough balance. Please recharge your account.");
+            document.getElementById('coin-count').innerText = 0;
+        }
+        
+
+    });
+});
+
+
 // Copy btn incrase
 
 const copyBtn = document.querySelectorAll('.btn-copy');
