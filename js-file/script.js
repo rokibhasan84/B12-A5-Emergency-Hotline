@@ -10,3 +10,17 @@ heartIcon.forEach(function(icon){
 heartCount.innerText = count;
     });
 });
+
+
+// Copy btn incrase
+
+const copyBtn = document.querySelectorAll('.btn-copy');
+
+let countCopy = 0;
+copyBtn.forEach(function(copy){
+    copy.addEventListener('click', function(){
+        countCopy++;
+        let copyIncrase = document.getElementById('copy-count');
+copyIncrase.innerText = countCopy;
+    });
+});
