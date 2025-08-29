@@ -39,19 +39,19 @@ This is even bubbling.
         Answer: Event delegation is a technique where instead of providing separate event listeners for many child
         elements, an event listener is placed on their parent element. Because due to event bubbling, the parent element can also catch the events of the child element.
 
-Why is it useful?
+  Why is it useful?
 
-1. It works with less code – if there are 100 child elements, there is no need to provide separate listeners, just provide one in the parent.
+    => It works with less code – if there are 100 child elements, there is no need to provide separate listeners just    provide one in the parent.
 
-2. Performance is better – the browser does not have to manage many event listeners.
+    => Performance is better – the browser does not have to manage many event listeners.
 
-3. Dynamic elements can be handled – if a new child element is added later, its event can also be caught using the event listener of the parent.
+    => Dynamic elements can be handled – if a new child element is added later, its event can also be caught using the event listener of the parent.
 
 
 
 5. What is the difference between **preventDefault() and stopPropagation()** methods?
 
-Answer : The preventDefault() and stopPropagation() methods in JavaScript, both part of the Event object.
+        Answer : The preventDefault() and stopPropagation() methods in JavaScript, both part of the Event object.
 
 preventDefault() :
 This method prevents the default action associated with a specific event from occurring. Default actions are the standard behaviors the browser performs in response to certain events.
