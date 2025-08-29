@@ -27,17 +27,19 @@ callBtn.forEach(function(btn){
 
     const titleName = parentDiv.querySelector('.title').textContent;
     const number = parentDiv.querySelector('.number').textContent;
-
-    alert(`📞 Calling:  ${titleName} - ${number}`);
     
     let cointCount = document.getElementById('coin-count').innerText;
 
-       cointCount = cointCount - 20;
-         document.getElementById('coin-count').innerText = cointCount;
         if(cointCount < 20){
             alert("You don't have enough coin. Minimum 20 coins required to make a call.");
-            
+            return;
         }
+
+        cointCount = cointCount - 20;
+        document.getElementById('coin-count').innerText = cointCount;
+
+        alert(`📞 Calling:  ${titleName} - ${number}`);
+
         const callHistory = document.getElementById('call-history');
         const callEntry = document.createElement('p');
         callEntry.classList.add('bg-white', 'p-4', 'rounded-lg', 'shadow-md', 'my-2', 'text-[#5c5c5cfa]', 'flex', 'justify-between', 'items-center');
@@ -66,19 +68,24 @@ const copyBtn = document.querySelectorAll('.btn-copy');
 let countCopy = 0;
 copyBtn.forEach(function(copy){
     copy.addEventListener('click', function(){
+        const number = this.closest(".closest-content").querySelector('.number').textContent;
+        alert(`Number is copied ${number} `);
         countCopy++;
         let copyIncrase = document.getElementById('copy-count');
-copyIncrase.innerText = countCopy;
+    copyIncrase.innerText = countCopy;
+
+        navigator.clipboard.writeText(number);
+
     });
 });
 
 
 // Copy number and paste anywhere
-const number = document.querySelectorAll(".number");
+// const number = document.querySelectorAll(".number");
 
-number.forEach(function(num){
-    num.addEventListener('click', function(){
-        const phoneNumber = num.textContent.trim();
-        navigator.clipboard.writeText(phoneNumber);
-    });
-});
+// number.forEach(function(num){
+//     num.addEventListener('click', function(){
+//         const phoneNumber = num.textContent.trim();
+//         navigator.clipboard.writeText(phoneNumber);
+//     });
+// });

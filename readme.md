@@ -17,15 +17,14 @@ Like, document.querySelectorAll('.class-name').
 
 2. How do you **create and insert a new element into the DOM**?
 
-Answer: We can use this ( createElement() ) to create a new HTML element into the DOM.
-Like,  const newParagraph = document.createElement('p');
-We can also add content, add attributes and we can insert append child to any HTML elements if we locate the parent element.
+Answer: We can use this (createElement()) to create a new HTML element into the DOM.
+    Like, const newParagraph = document.createElement('p');
+    We can also add content, add attributes and we can insert append child to any HTML element if we loacate the parent element.
 
 
 3. What is **Event Bubbling** and how does it work?
-Answer: 
-      Event bubbling in JavaScript is a
-mechanism within the Document Object Model (DOM) event propagation process. When an event, such as a click or a keypress, occurs on an element, that event does not simply stop at the target element. Instead, it "bubbles up" through the DOM tree, from the target element to its immediate parent, then to the grandparent, and so on, all the way up to the document object.
+Answer: Event bubbling in javaScript is a 
+      Event bubbling in JavaScript is a tackle within the Document Object Model (DOM) event propagration process. 
 
 How it works:
 
