@@ -17,40 +17,35 @@ Like, document.querySelectorAll('.class-name').
 
 2. How do you **create and insert a new element into the DOM**?
 
-Answer: We can use this (createElement()) to create a new HTML element into the DOM.
-    Like, const newParagraph = document.createElement('p');
-    We can also add content, add attributes and we can insert append child to any HTML element if we loacate the parent element.
+      Answer: We can use this (createElement()) to create a new HTML element into the DOM.
+Like, const newParagraph = document.createElement('p');
+We can also add content, add attributes and we can insert append child to any HTML element if we loacate the parent element.
 
 
 3. What is **Event Bubbling** and how does it work?
-Answer: Event bubbling in javaScript is a 
-      Event bubbling in JavaScript is a tackle within the Document Object Model (DOM) event propagration process. 
 
-How it works:
+      Answer: If you click on something inside, the thinks outside can be affected by that click.
 
-Event Trigger:
-  An event is initiated on a specific DOM element (the "target element"). For example, a user clicks a button.
-Handlers on Target:
-  Any event handlers attached directly to the target element for that specific event type are executed first.
-Bubbling Up:
-  The event then "bubbles" up the DOM hierarchy. This means that the browser checks if any parent elements of the target element also have event handlers attached for the same event type.
-Parent Handlers Executed:
-If a parent element has an event handler for that event, it will be triggered and executed. This process continues up the DOM tree, from parent to grandparent, until it reaches the document object (or window, depending on the event).
+Like, Suppose there is a <button> inside a <div>. When you click the button-
+      1. First the button event will be fired
+      2. Then div event will be fired
+      3. Finally it can go to the body
 
-Stopping Bubbling:
-You can prevent an event from bubbling further up the DOM tree using event.stopPropagation(). When called within an event handler, this method stops the event from propagating to ancestor elements.
-
+This is even bubbling.
 
 
 4. What is **Event Delegation** in JavaScript? Why is it useful?
 
-Answer: 
-Event delegation is a powerful technique that simplifies event handling, improves performance, and enhances the flexibility of your code. By leveraging the event bubbling mechanism, you can efficiently manage events on a group of elements rather than dealing with each one individually.
+        Answer: Event delegation is a technique where instead of providing separate event listeners for many child
+        elements, an event listener is placed on their parent element. Because due to event bubbling, the parent element can also catch the events of the child element.
 
-Efficiency: Imagine you have a list of items, each requiring a click event. Instead of attaching a click handler to each item, event delegation allows you to attach a single listener to the parent container. This results in less code and better performance, especially for large sets of elements.
+Why is it useful?
 
-Dynamism: Event delegation is particularly useful when dealing with dynamic content. As new elements are added or removed, the event listener remains attached to the parent, reducing the need for constant reattachment. 
+1. It works with less code – if there are 100 child elements, there is no need to provide separate listeners, just provide one in the parent.
 
+2. Performance is better – the browser does not have to manage many event listeners.
+
+3. Dynamic elements can be handled – if a new child element is added later, its event can also be caught using the event listener of the parent.
 
 
 
